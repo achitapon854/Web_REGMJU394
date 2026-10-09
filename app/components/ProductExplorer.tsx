@@ -196,6 +196,7 @@ export default function ProductExplorer({
                 >
                   <div className="product-image">
                     {item.thumbnail ? (
+                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -249,12 +250,13 @@ export default function ProductExplorer({
                           แก้ไข
                         </Link>
 
-                        <Link
-                          href={`/products/${item.id}/delete`}
+                        <button
+                          type="button"
                           className="delete-link"
+                          onClick={() => removeProduct(item.id)}
                         >
                           ลบ
-                        </Link>
+                        </button>
                       </div>
                     )}
                   </div>
